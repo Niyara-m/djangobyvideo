@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>В сентябре средняя дневная температура, как ожидается, составит +18…+25, в октябре будет доходить до +14, но ночью уже могут быть заморозки, в ноябре — до +8. Количество осадков прогнозируется меньше нормы в сентябре и близко к норме в остальные месяцы, однако на юге вероятен их дефицит.</p>
+        </br>
+        <p>Вывод всех значений Value: <span class="text-info">{{values}}</span></p>
+        <p>
+            Вывод значений Value если он равен hello:
+            {% for el in values %}
+                {% if el == 'Hello' %}
+                    <span class="text-info">{{ el }}</span>
+                {% endif %}
+            {% endfor %}
+        </p>
+        <p>
+            Вывод значений Object по одному:
+            {% for el in obj %}
+                <span class="text-info">{{ el }},</span>
+            {% endfor %}
+        </p>
+        <p>
+            Вывод только определенного значения Object:<span class="text-info">{{obj.age}}</span>
+        </p>
+        <p>{% include 'main/test.html' %}</p>
+    </div>
+{% endblock %}
